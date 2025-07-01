@@ -1,4 +1,8 @@
 /* GLOBAL RESET + VARIABLES */
+@import "tailwindcss";
+@tailwind utilities;
+
+
 :root {
   /* Fonts */
   --font-sans: 'Montserrat', 'Poppins', ui-sans-serif, system-ui, -apple-system,
@@ -41,8 +45,7 @@
 
 /* Reset and base styles */
 * {
-  margin: 0;
-  padding: 0;
+ 
   box-sizing: border-box;
 }
 html {
