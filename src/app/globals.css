@@ -1,26 +1,72 @@
-@import "tailwindcss";
-
+/* GLOBAL RESET + VARIABLES */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Fonts */
+  --font-sans: 'Montserrat', 'Poppins', ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  /* Colors */
+  --theme-blue: #3B82F6;
+  --theme-dark: #232323;
+  --theme-light: #FFFFFF;
+  --dark-offcanvas: #353535;
+  --dark-hover: #454545;
+  --light-hover: #F5F5F5;
+  --body-text-light: #737373;
+  --body-text-dark: #ffffff;
+  --job-light: #e5e7eb;
+  --job-dark: rgba(245, 245, 245, 0.5);
+
+  /* Shadows */
+  --shadow-hero-image: 33px 40px 0px 9px #313131;
+  --shadow-aboutme-image: -23px 40px 0px 4px var(--theme-blue);
+
+  /* Breakpoints (optional if you use media queries manually) */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1025px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Dark mode class */
+.dark {
+  --bg-color: var(--theme-dark);
+  --text-color: var(--body-text-dark);
+}
+.light {
+  --bg-color: var(--theme-light);
+  --text-color: var(--body-text-light);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
 }
+
+/* Example custom utilities */
+.shadow-hero-image {
+  box-shadow: var(--shadow-hero-image);
+}
+.shadow-aboutme-image {
+  box-shadow: var(--shadow-aboutme-image);
+}
+.bg-theme-blue {
+  background-color: var(--theme-blue);
+}
+.text-theme-blue {
+  color: var(--theme-blue);
+}
+
+/* You can keep going with spacing, padding, etc. */

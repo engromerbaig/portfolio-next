@@ -1,18 +1,30 @@
+const sharedColors = {
+  bgColor: 'bg-white-800',
+  textColor: 'text-black',
+};
+
 export const theme = {
-  
+  sectionBg:{
+    bgColor:'bg-theme-light dark:bg-theme-dark',
+    textColor:'text-body-text-light dark:text-body-text-dark',
+  },
 
-      paddingHorizontal: 'px-4 md:px-10 lg:px-10',
+  sectionPaddings:{
+  horizontalPx:"px-10 lg:px-20 ",
+  },
 
-            paddingLeft: 'pl-4 md:pl-10 lg:pl-10',
+  navbar: {
+    bgColor: 'sharedColors.bgColor',
+    textColor: sharedColors.textColor,
+  },
 
-      paddingVertical: 'py-16 md:py-20 lg:py-24',
-            paddingVerticalMenu: 'py-8 md:py-10 lg:py-12',
 
-      paddingBottom: 'pb-12 md:pb-20 lg:pb-24',
-            paddingBottomOnlyMd: 'pb-0 md:pb-20 lg:pb-24',
-
-      paddingTop: 'pt-12 md:pt-20 lg:pt-24',
-
-   
-  };
-  
+  hero: {
+    // bgColor: sharedColors.bgColor,
+    titleColor: 'text-black dark:text-white',
+    textColor:'text-body-text-light dark:text-body-text-dark',
+  },
+  content: {
+    bgColor: sharedColors.bgColor,
+  },
+};
