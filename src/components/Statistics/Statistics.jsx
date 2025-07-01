@@ -1,22 +1,25 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Heading from '../Heading/Heading';
 import StatisticItem from './modules/StatisticItem';
 import { theme } from '../../theme';
 
-// Function to initialize lines of code from localStorage or use default
+// Function to safely access localStorage inside useEffect
 const getInitialLinesOfCode = () => {
-  const storedLines = parseInt(localStorage.getItem('linesOfCode') || '15000', 10);
-  return storedLines;
+  if (typeof window === 'undefined') return 0;
+  return parseInt(localStorage.getItem('linesOfCode') || '15000', 10);
 };
 
-// Function to update lines of code in localStorage
 const updateLinesOfCode = (value) => {
+  if (typeof window === 'undefined') return;
   localStorage.setItem('linesOfCode', value.toString());
 };
 
-// Function to get visitor count
 const getVisitorsCount = () => {
+  if (typeof window === 'undefined') return 0;
+
   const storedVisitors = parseInt(localStorage.getItem('visitorsCount') || '10', 10);
   const lastReset = parseInt(localStorage.getItem('lastReset') || '0', 10);
   const now = new Date().getTime();
@@ -24,38 +27,46 @@ const getVisitorsCount = () => {
 
   if (now - lastReset > oneDay) {
     localStorage.setItem('lastReset', now.toString());
-    localStorage.setItem('visitorsCount', '10'); // Explicitly set to 10
+    localStorage.setItem('visitorsCount', '10');
     return 10;
   } else {
     return storedVisitors;
   }
 };
 
-// Function to increment visitors count
 const incrementVisitorsCount = () => {
+  if (typeof window === 'undefined') return;
+
   const storedVisitors = parseInt(localStorage.getItem('visitorsCount') || '10', 10);
   localStorage.setItem('visitorsCount', (storedVisitors + 1).toString());
 };
 
 const Statistics = () => {
-  const [linesOfCode, setLinesOfCode] = useState(getInitialLinesOfCode());
-  const [visitors, setVisitors] = useState(getVisitorsCount());
+  const [linesOfCode, setLinesOfCode] = useState(0);
+  const [visitors, setVisitors] = useState(0);
   const [countries] = useState(15);
 
+  // Initial load
   useEffect(() => {
-    // Increment visitors count only on initial render
-    incrementVisitorsCount();
-    setVisitors(getVisitorsCount()); // Update state to trigger re-render and animation
-  }, []); // Empty dependency array ensures this runs once on component mount
+    // Safe browser-only access
+    if (typeof window === 'undefined') return;
 
+    const initialLines = getInitialLinesOfCode();
+    setLinesOfCode(initialLines);
+
+    incrementVisitorsCount();
+    setVisitors(getVisitorsCount());
+  }, []);
+
+  // Update lines of code every 4 hours
   useEffect(() => {
-    // Update lines of code every 4 hours
-    const updateInterval = 4 * 60 * 60 * 1000; // 4 hours in milliseconds
+    if (typeof window === 'undefined') return;
+
+    const updateInterval = 4 * 60 * 60 * 1000; // 4 hours
     const now = new Date().getTime();
     const lastUpdate = parseInt(localStorage.getItem('lastLinesUpdate') || '0', 10);
 
     if (now - lastUpdate > updateInterval) {
-      // Update lines of code
       const newLines = getInitialLinesOfCode() + 5;
       setLinesOfCode(newLines);
       updateLinesOfCode(newLines);
@@ -63,23 +74,17 @@ const Statistics = () => {
     }
 
     const intervalId = setInterval(() => {
-      const newLines = getInitialLinesOfCode() + 5;
-      setLinesOfCode(newLines);
-      updateLinesOfCode(newLines);
+      const updatedLines = getInitialLinesOfCode() + 5;
+      setLinesOfCode(updatedLines);
+      updateLinesOfCode(updatedLines);
       localStorage.setItem('lastLinesUpdate', new Date().getTime().toString());
     }, updateInterval);
 
-    // Cleanup interval on component unmount
     return () => clearInterval(intervalId);
   }, []);
 
-  // Variants for framer-motion
+  // Framer Motion animations
   const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 2 } },
-  };
-
-  const countVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 2 } },
   };

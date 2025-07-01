@@ -1,21 +1,23 @@
-// src/components/ScrollToTopLink.js
+'use client';
+
 import { useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const ScrollToTopLink = ({ to, children, className, ...props }) => {
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
-    if (location.pathname === to) {
+    if (pathname === to) {
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
-  }, [location, to]);
+  }, [pathname, to]);
 
   return (
-    <Link to={to} className={className} {...props}>
+    <Link href={to} className={className} {...props}>
       {children}
     </Link>
   );

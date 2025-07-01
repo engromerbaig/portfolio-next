@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+'use client';
+
+import { useState } from 'react';
 import FormField from './modules/FormField';
 import Button from '../Button/Button';
-
-// form submissions are working now my g
 
 const ContactForm = ({ formFields, rowConfig }) => {
   const initialFormData = formFields.reduce((acc, field) => {
@@ -25,7 +25,7 @@ const ContactForm = ({ formFields, rowConfig }) => {
     e.preventDefault();
 
     const formData = new FormData(e.target);
-    
+
     try {
       const response = await fetch('/', {
         method: 'POST',
@@ -34,29 +34,21 @@ const ContactForm = ({ formFields, rowConfig }) => {
       });
 
       if (response.ok) {
-        // Show success message
         setShowSuccessMessage(true);
-
-        // Reset form fields
         setFormData(initialFormData);
-
-        setTimeout(() => {
-          setShowSuccessMessage(false);
-        }, 2000); // Hide success message after 2 seconds
+        setTimeout(() => setShowSuccessMessage(false), 2000);
       } else {
         console.error('Form submission failed');
-        // Handle error (e.g., show error message to user)
       }
     } catch (error) {
       console.error('Error:', error);
-      // Handle error (e.g., show error message to user)
     }
   };
 
   const rows = rowConfig(formFields);
 
   return (
-    <form onSubmit={handleSubmit} netlify name="contact">
+    <form onSubmit={handleSubmit} name="contact" data-netlify="true">
       <input type="hidden" name="form-name" value="contact" />
       <div className="flex flex-col text-start space-y-4">
         {rows.map((row, rowIndex) => (
@@ -77,7 +69,9 @@ const ContactForm = ({ formFields, rowConfig }) => {
         </div>
 
         {showSuccessMessage && (
-          <p className="text-theme-blue text-center font-semibold mt-10">&#10003; Form submitted successfully</p>
+          <p className="text-theme-blue text-center font-semibold mt-10">
+            &#10003; Form submitted successfully
+          </p>
         )}
       </div>
     </form>

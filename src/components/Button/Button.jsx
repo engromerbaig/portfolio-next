@@ -1,6 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Button.css'; // Import the CSS file for animation
+'use client';
+
+import Link from 'next/link';
+import './Button.css'; // Move this file to /src/components/Button/
 
 const Button = ({
   text,
@@ -8,56 +9,44 @@ const Button = ({
   to,
   href,
   hover = false,
-  textColor = 'text-theme-blue', // Default text color
-
-  // new
-  hoverTextColor = 'white', // Default hover text color
-  hoverBgColor = '#3B82F6', // Default hover background color
-  borderColor = 'border-theme-blue', // Default border color
-  // hoverBorderColor = '#001529', // Default hover border color
-  // end new
-  onClick, // Optional onClick handler
+  textColor = 'text-theme-blue',
+  hoverTextColor = 'white',
+  hoverBgColor = '#3B82F6',
+  borderColor = 'border-theme-blue',
+  onClick,
   ...props
 }) => {
-  const ButtonComponent = href ? 'a' : to ? Link : 'button';
-
   const baseClasses = [
-    // Tailwind classes from theme
     'py-2.5 px-7',
     textColor,
     borderColor,
     'bg-transparent',
     'border-4',
-    'border-theme-blue', // make optional with this as default value
-    'bg-transparent',
     'transition duration-200',
-    'btn-31', // Add the new class for the border effect
+    'btn-31',
   ];
 
-  const hoverClasses = hover
-    ? []
-    : [];
+  const Component = href
+    ? 'a'
+    : to
+    ? ({ children, ...rest }) => <Link href={to} {...rest}>{children}</Link>
+    : 'button';
 
   return (
-    <ButtonComponent
-      to={to}
+    <Component
       href={href}
-      onClick={onClick} // Include onClick handler
-      className={[...baseClasses, ...hoverClasses, className].join(' ')}
+      onClick={onClick}
+      className={[...baseClasses, className].join(' ')}
       {...props}
       style={{
         '--hover-text-color': hoverTextColor,
         '--hover-bg-color': hoverBgColor,
-        // '--border-color': borderColor,
-        // '--hover-border-color': hoverBorderColor,
       }}
     >
       <span className="text-container">
-        <span className="text">
-          {text}
-        </span>
+        <span className="text">{text}</span>
       </span>
-    </ButtonComponent>
+    </Component>
   );
 };
 

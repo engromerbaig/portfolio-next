@@ -1,3 +1,5 @@
+'use client'; // only needed if ToolSection uses interactivity (can remove if fully static)
+
 import React from "react";
 import ToolSection from "./modules/ToolSection";
 import toolData from "./modules/toolData";

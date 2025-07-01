@@ -1,17 +1,24 @@
-import React, { useState, useRef, useEffect } from 'react';
-import SlideWrapper from '../../utilities/Animations/SlideWrapper';
+'use client';
+
+import { useState, useRef, useEffect } from 'react';
+import SlideWrapper from '@/utilities/Animations/SlideWrapper';
 import ProjectDetail from './modules/ProjectDetail';
 import projectData from './modules/projectData';
-import { theme } from '../../theme';
-import Heading from '../Heading/Heading';
-import Button from '../Button/Button';
-import FadeWrapper from '../../utilities/Animations/FadeWrapper';
-import ScrollToTopLink from '../Scroll/ScrollToTopLink';
-import PreloadImages from '../../utilities/Loaders/PreloadImages/PreloadImages';
+import { theme } from '@/theme';
+import Heading from '@/components/Heading/Heading';
+import Button from '@/components/Button/Button';
+import FadeWrapper from '@/utilities/Animations/FadeWrapper';
+import ScrollToTopLink from '@/components/Scroll/ScrollToTopLink';
+import PreloadImages from '@/utilities/Loaders/PreloadImages/PreloadImages';
 
-const Projects = ({ numProjects = 4, noBorder = false, buttonText = "More Projects", buttonLink = "/projects" }) => {
-  const [projectsToShow, setProjectsToShow] = useState(numProjects === "all" ? 4 : numProjects);
-  const [showLoadMore, setShowLoadMore] = useState(numProjects === "all" && projectData.length > 4);
+const Projects = ({
+  numProjects = 4,
+  noBorder = false,
+  buttonText = 'More Projects',
+  buttonLink = '/projects',
+}) => {
+  const [projectsToShow, setProjectsToShow] = useState(numProjects === 'all' ? 4 : numProjects);
+  const [showLoadMore, setShowLoadMore] = useState(numProjects === 'all' && projectData.length > 4);
   const [showShowLess, setShowShowLess] = useState(false);
   const [fadeInButtons, setFadeInButtons] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -31,7 +38,7 @@ const Projects = ({ numProjects = 4, noBorder = false, buttonText = "More Projec
 
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+          containerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
           setTimeout(() => setFadeInButtons(true), 300);
         });
       });
@@ -43,9 +50,10 @@ const Projects = ({ numProjects = 4, noBorder = false, buttonText = "More Projec
     setProjectsToShow(newCount);
     setShowShowLess(newCount > 4);
     setShowLoadMore(true);
+
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        containerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
         setTimeout(() => setFadeInButtons(true), 300);
       });
     });
@@ -55,7 +63,6 @@ const Projects = ({ numProjects = 4, noBorder = false, buttonText = "More Projec
     setFadeInButtons(false);
   }, [projectsToShow]);
 
-  // Get the next two images to preload
   const nextImagesToPreload = projectData
     .slice(projectsToShow, projectsToShow + 2)
     .map((project) => project.image);
@@ -68,6 +75,7 @@ const Projects = ({ numProjects = 4, noBorder = false, buttonText = "More Projec
           text="Nothing beats gaining experience through real-life projects."
         />
       </div>
+
       <div>
         {projectData.slice(0, projectsToShow).map((project, index) => (
           <FadeWrapper key={index} index={index}>
@@ -82,24 +90,26 @@ const Projects = ({ numProjects = 4, noBorder = false, buttonText = "More Projec
           </FadeWrapper>
         ))}
       </div>
+
       <PreloadImages images={nextImagesToPreload} />
+
       <div className="flex flex-col md:flex-row gap-4 items-center justify-center text-center">
         <FadeWrapper isVisible={fadeInButtons}>
           {showLoadMore && (
             <Button
-              text={isLoading ? "Loading..." : "Load More"}
+              text={isLoading ? 'Loading...' : 'Load More'}
               onClick={handleLoadMore}
               disabled={isLoading}
             />
           )}
         </FadeWrapper>
+
         <FadeWrapper isVisible={fadeInButtons}>
-          {showShowLess && (
-            <Button text="Show Less" onClick={handleShowLess} />
-          )}
+          {showShowLess && <Button text="Show Less" onClick={handleShowLess} />}
         </FadeWrapper>
+
         <FadeWrapper>
-          {numProjects !== "all" && (
+          {numProjects !== 'all' && (
             <ScrollToTopLink>
               <Button text={buttonText} to={buttonLink} />
             </ScrollToTopLink>

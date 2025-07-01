@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+'use client';
+
+import { useState } from 'react';
 import inputStyle from './inputStyles';
 import './styles.css';
 
@@ -18,7 +20,8 @@ const FormField = ({ field, value, onChange }) => {
       >
         {field.label}
       </label>
-      { field.type === 'textarea' ? (
+
+      {field.type === 'textarea' ? (
         <textarea
           id={field.id}
           name={field.id}

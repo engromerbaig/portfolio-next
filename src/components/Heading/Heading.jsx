@@ -1,6 +1,13 @@
-import { theme } from '../../theme';
+'use client';
 
-const Heading = ({ title, text, titleColor = theme.hero.titleColor, textColor = theme.hero.textColor }) => {
+import { theme } from '@/theme';
+
+const Heading = ({
+  title,
+  text,
+  titleColor = theme.hero.titleColor,
+  textColor = theme.hero.textColor,
+}) => {
   return (
     <div>
       <h1 className={`text-4xl md:text-6xl font-semibold mb-4 ${titleColor}`} style={{ lineHeight: '1.25' }}>

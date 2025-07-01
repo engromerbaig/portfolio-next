@@ -1,9 +1,9 @@
+'use client';
+
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaCode, FaUsers, FaEarthAmericas } from 'react-icons/fa6';
-
-const iconStyles = "text-3xl aspect-square text-theme-blue motion-safe:animate-pulse";
 
 const iconMap = {
   code: FaCode,
@@ -11,48 +11,54 @@ const iconMap = {
   globe: FaEarthAmericas,
 };
 
+const iconStyles = "text-3xl aspect-square text-theme-blue motion-safe:animate-pulse";
+
 const StatisticItem = ({ title, iconType, value }) => {
   const [displayValue, setDisplayValue] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.8, // Trigger only when the element is fully visible
+    threshold: 0.8,
   });
 
   const Icon = iconMap[iconType] || FaCode;
 
   useEffect(() => {
-    if (inView) {
-      const duration = 2; // Duration in seconds
-      const start = 0;
-      const end = value;
-      let startTime = null;
+    if (inView && !hasAnimated) {
+      const duration = 2;
+      const frameRate = 60;
+      const totalFrames = duration * frameRate;
+      const increment = value / totalFrames;
 
-      const animate = (timestamp) => {
-        if (!startTime) startTime = timestamp;
-        const progress = (timestamp - startTime) / (duration * 1000);
-        const current = Math.min(start + (end - start) * progress, end);
+      let frame = 0;
 
-        setDisplayValue(Math.floor(current));
+      const counter = () => {
+        frame++;
+        const newValue = Math.round(increment * frame);
+        setDisplayValue(newValue <= value ? newValue : value);
 
-        if (progress < 1) {
-          requestAnimationFrame(animate);
+        if (frame < totalFrames) {
+          requestAnimationFrame(counter);
+        } else {
+          setHasAnimated(true);
         }
       };
 
-      requestAnimationFrame(animate);
+      requestAnimationFrame(counter);
     }
-  }, [inView, value]);
+  }, [inView, hasAnimated, value]);
 
   return (
-    <div ref={ref} className='flex flex-col gap-4'>
-      <h1 className='font-semibold'>{title}</h1>
+    <div ref={ref} className="flex flex-col gap-4 items-center">
+      <h1 className="font-semibold">{title}</h1>
       <div className="flex items-center justify-center gap-2">
         <Icon className={iconStyles} />
         <motion.p
-          className='text-3xl font-bold'
+          className="text-3xl font-bold"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 2 }}
+          transition={{ duration: 1.2 }}
         >
           {displayValue.toLocaleString()}
         </motion.p>
