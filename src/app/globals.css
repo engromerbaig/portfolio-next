@@ -2,14 +2,13 @@
 @import "tailwindcss";
 @tailwind utilities;
 
-
 :root {
   /* Fonts */
   --font-sans: 'Montserrat', 'Poppins', ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-  /* Colors */
+  /* Colors - Light Mode Defaults */
   --theme-blue: #3B82F6;
   --theme-dark: #232323;
   --theme-light: #FFFFFF;
@@ -25,7 +24,7 @@
   --shadow-hero-image: 33px 40px 0px 9px #313131;
   --shadow-aboutme-image: -23px 40px 0px 4px var(--theme-blue);
 
-  /* Breakpoints (optional if you use media queries manually) */
+  /* Breakpoints (for reference) */
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1025px;
@@ -33,43 +32,113 @@
   --breakpoint-2xl: 1536px;
 }
 
-/* Dark mode class */
-.dark {
-  --bg-color: var(--theme-dark);
-  --text-color: var(--body-text-dark);
-}
-.light {
-  --bg-color: var(--theme-light);
-  --text-color: var(--body-text-light);
-}
-
 /* Reset and base styles */
 * {
- 
   box-sizing: border-box;
 }
+
 html {
   font-family: var(--font-sans);
   scroll-behavior: smooth;
 }
+
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background 0.3s, color 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Example custom utilities */
+/* Dark mode configuration - matches your old tailwind config */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+/* Custom color utilities - all your original colors */
+.bg-theme-blue { background-color: var(--theme-blue); }
+.bg-theme-dark { background-color: var(--theme-dark); }
+.bg-theme-light { background-color: var(--theme-light); }
+.bg-dark-offcanvas { background-color: var(--dark-offcanvas); }
+.bg-dark-hover { background-color: var(--dark-hover); }
+.bg-light-hover { background-color: var(--light-hover); }
+.bg-job-light { background-color: var(--job-light); }
+.bg-job-dark { background-color: var(--job-dark); }
+
+.text-theme-blue { color: var(--theme-blue); }
+.text-theme-dark { color: var(--theme-dark); }
+.text-theme-light { color: var(--theme-light); }
+.text-body-light { color: var(--body-text-light); }
+.text-body-dark { color: var(--body-text-dark); }
+.text-body-text-light { color: var(--body-text-light); }
+.text-body-text-dark { color: var(--body-text-dark); }
+.text-black { color: #000000; }
+.text-white { color: #ffffff; }
+
+.border-theme-blue { border-color: var(--theme-blue); }
+.border-theme-dark { border-color: var(--theme-dark); }
+.border-theme-light { border-color: var(--theme-light); }
+
+/* Custom shadow utilities */
 .shadow-hero-image {
   box-shadow: var(--shadow-hero-image);
 }
+
 .shadow-aboutme-image {
   box-shadow: var(--shadow-aboutme-image);
 }
-.bg-theme-blue {
-  background-color: var(--theme-blue);
-}
-.text-theme-blue {
-  color: var(--theme-blue);
+
+/* Dark mode overrides */
+.dark .bg-theme-light { background-color: var(--theme-dark); }
+.dark .bg-theme-dark { background-color: var(--theme-light); }
+.dark .text-theme-light { color: var(--theme-dark); }
+.dark .text-theme-dark { color: var(--theme-light); }
+.dark .text-body-light { color: var(--body-text-dark); }
+.dark .text-body-dark { color: var(--body-text-light); }
+.dark .text-body-text-light { color: var(--body-text-dark); }
+.dark .text-body-text-dark { color: var(--body-text-light); }
+.dark .text-black { color: #ffffff; }
+.dark .text-white { color: #000000; }
+
+/* Hover states */
+.hover\:bg-dark-hover:hover { background-color: var(--dark-hover); }
+.hover\:bg-light-hover:hover { background-color: var(--light-hover); }
+
+.dark .hover\:bg-light-hover:hover { background-color: var(--dark-hover); }
+.dark .hover\:bg-dark-hover:hover { background-color: var(--light-hover); }
+
+/* Custom breakpoints using container queries or media queries */
+@media (min-width: 640px) {
+  .sm\:block { display: block; }
+  .sm\:hidden { display: none; }
+  /* Add other sm: utilities as needed */
 }
 
-/* You can keep going with spacing, padding, etc. */
+@media (min-width: 768px) {
+  .md\:block { display: block; }
+  .md\:hidden { display: none; }
+  /* Add other md: utilities as needed */
+}
+
+@media (min-width: 1025px) {
+  .lg\:block { display: block; }
+  .lg\:hidden { display: none; }
+  /* Add other lg: utilities as needed */
+}
+
+@media (min-width: 1280px) {
+  .xl\:block { display: block; }
+  .xl\:hidden { display: none; }
+  /* Add other xl: utilities as needed */
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:block { display: block; }
+  .\32xl\:hidden { display: none; }
+  /* Add other 2xl: utilities as needed */
+}
+
+/* Custom h1 styling (from your plugin) */
+
+/* Font family utilities */
+.font-sans {
+  font-family: var(--font-sans);
+}
