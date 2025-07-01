@@ -1,0 +1,98 @@
+
+.btn-31 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-image: none;
+  cursor: pointer;
+  position: relative;
+  text-transform: uppercase;
+  display: inline-block;
+
+}
+
+.btn-31:disabled {
+  cursor: default;
+}
+
+.btn-31:-moz-focusring {
+  outline: auto;
+}
+
+.btn-31 [hidden] {
+  display: none;
+}
+
+.btn-31::before {
+  --progress: 100%;
+  background: var(--hover-bg-color, #3B82F6); /* <-- Change fill color here */
+
+  /* background: theme('colors.theme-blue'); bg color on hover - make it optional with this as default */
+  -webkit-clip-path: polygon(
+    100% 0,
+    var(--progress) var(--progress),
+    0 100%,
+    100% 100%
+  );
+  clip-path: polygon(
+    100% 0,
+    var(--progress) var(--progress),
+    0 100%,
+    100% 100%
+  );
+  content: "";
+  inset: 0;
+  position: absolute;
+  transition: clip-path 0.4s ease, -webkit-clip-path 0.4s ease; /* Smooth transition */
+}
+
+.btn-31:hover::before {
+  --progress: 0%;
+}
+
+.btn-31 .text-container {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.btn-31 .text {
+  display: block;
+  font-weight: 700;
+  position: relative;
+}
+
+.btn-31:hover .text {
+  -webkit-animation: move-up-alternate 0.4s ease forwards; /* Smooth transition */
+  animation: move-up-alternate 0.4s ease forwards; /* Smooth transition */
+  color: var(--hover-text-color, #001529); /* Change text color on hover */
+}
+
+@-webkit-keyframes move-up-alternate {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(80%);
+  }
+  51% {
+    transform: translateY(-80%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes move-up-alternate {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(80%);
+  }
+  51% {
+    transform: translateY(-80%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
