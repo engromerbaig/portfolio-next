@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import './Button.css'; // Move this file to /src/components/Button/
+import './Button.css';
 
 const Button = ({
   text,
@@ -26,27 +26,39 @@ const Button = ({
     'btn-31',
   ];
 
-  const Component = href
-    ? 'a'
-    : to
-    ? ({ children, ...rest }) => <Link href={to} {...rest}>{children}</Link>
-    : 'button';
+  const combinedClassName = [...baseClasses, className].join(' ');
+
+  const styleVars = {
+    '--hover-text-color': hoverTextColor,
+    '--hover-bg-color': hoverBgColor,
+  };
+
+  if (to) {
+    return (
+      <Link href={to} {...props} className={combinedClassName} style={styleVars}>
+        <span className="text-container">
+          <span className="text">{text}</span>
+        </span>
+      </Link>
+    );
+  }
+
+  if (href) {
+    return (
+      <a href={href} {...props} className={combinedClassName} style={styleVars}>
+        <span className="text-container">
+          <span className="text">{text}</span>
+        </span>
+      </a>
+    );
+  }
 
   return (
-    <Component
-      href={href}
-      onClick={onClick}
-      className={[...baseClasses, className].join(' ')}
-      {...props}
-      style={{
-        '--hover-text-color': hoverTextColor,
-        '--hover-bg-color': hoverBgColor,
-      }}
-    >
+    <button onClick={onClick} {...props} className={combinedClassName} style={styleVars}>
       <span className="text-container">
         <span className="text">{text}</span>
       </span>
-    </Component>
+    </button>
   );
 };
 

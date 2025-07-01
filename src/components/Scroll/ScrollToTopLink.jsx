@@ -4,20 +4,20 @@ import { useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-const ScrollToTopLink = ({ to, children, className, ...props }) => {
+const ScrollToTopLink = ({ to = '/', children, className = '', ...props }) => {
   const pathname = usePathname();
 
   useEffect(() => {
     if (pathname === to) {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [pathname, to]);
 
+  // Fallback to "/" if `to` is not passed
+  const safeHref = typeof to === 'string' && to.trim() !== '' ? to : '/';
+
   return (
-    <Link href={to} className={className} {...props}>
+    <Link href={safeHref} className={className} {...props}>
       {children}
     </Link>
   );
