@@ -12,10 +12,11 @@ export default function WorkExperiencePage() {
   return (
     <FadeInSection>
       <div className={`py-24 pb-40 overflow-hidden ${theme.sectionBg.bgColor} ${theme.sectionBg.textColor}`}>
-        <div className={`${theme.sectionPaddings.horizontalPx} py-20 text-center`}>
+        <div className={`${theme.sectionPaddings.horizontalPx} flex flex-col items-center py-10 text-center`}>
           <Heading
             title="Work Experience"
-            text="With 3+ years of experience, I have worked for reputed companies in Pakistan and Germany, alongside freelance projects. I excel in WordPress development, front-end technologies, and UI/UX design. My work has improved website traffic, user engagement, and content management. I am adept at handling tasks both remotely and in-house, collaborating effectively with international teams."
+            text="With almost 4 years of experience, I’ve grown from front-end development into full-stack work with the MERN stack. I specialize in building responsive UIs and scalable backends, continuously learning and adapting to new technologies. I've worked with companies in Pakistan and Germany, as well as on freelance projects, both remotely and on-site."
+            textWidth='max-w-3xl'
           />
         </div>
 

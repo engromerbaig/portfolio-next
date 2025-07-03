@@ -1,25 +1,60 @@
 export const jobProfiles = [
   {
-    company: 'Dasign GmbH',
-    companyLink: 'https://www.dasign.de',
-    location: 'Darmstadt, Germany',
-    title: 'Working Student WordPress Developer',
-    designation: 'WordPress Developer (Working Student)',
-    dates: 'Dec 2023 - May 2024',
+    company: 'Voic Digital',
+    companyLink: 'https://voicdigital.com/',
+    location: 'Karachi, Pakistan',
+    title: 'Full-Stack Developer',
+    designation: 'Full-Stack Developer',
+    dates: 'Jun 2024 - Present',
     content: [
-      'Implemented custom WordPress themes using Elementor and Avada, increasing website traffic by 30%',
-      'Aligned PR and art direction efforts, boosting social media reach by 30% and conversion rates by 20%',
-      'Optimized content editing processes, reducing content errors by 40% and increasing publishing speed by 25%',
-      'Implemented SEO and digital marketing strategies, tracked via Google Analytics'
+      'Built scalable web apps using React.js, Next.js (CSR & SSR), JavaScript, TypeScript, and Tailwind CSS for CRM systems, e-commerce platforms, and dashboards.',
+      'Integrated RESTful APIs, third-party services, and backend layers using Node.js, Firebase, and MongoDB.',
+      'Migrated WordPress sites to React.js/Next.js, improving performance, SEO, and maintainability.',
+      'Managed end-to-end project delivery, from planning and sprint management to deployment via Vercel, Netlify, and CI/CD pipelines.',
+      'Led small dev teams, reviewed code, and collaborated with design and product teams using Figma, Jira, and GitHub under Agile workflows.'
     ],
     skills: {
       languages: ['JavaScript', 'TypeScript', 'HTML', 'CSS'],
-      frameworksLibraries: ['Vue.js', 'React','Tailwind CSS', 'Bootstrap',  ],
-      CMS: ['WordPress', 'Elementor', 'Avada','Gutenberg'],
-      management: ['MS Teams'],
-      uxui: ['Figma', 'Adobe XD'],
+      frameworksLibraries: ['React.js', 'Next.js', 'Node.js', 'Tailwind CSS'],
+      databases: ['MongoDB', 'Firebase'],
+      management: ['Jira', 'GitHub'],
+      uxui: ['Figma'],
+      misc: ['SEO', 'CI/CD', 'Vercel', 'Netlify', 'Agile']
+    },
+    projects: [
+            { title: 'Scons Tech', link: 'https://sconstech.com/' },
 
-      misc: ['SEO', 'Google Analytics','Social Media Advertising'],
+      { title: 'Elegant Esthetics OC', link: 'https://elegantestheticsoc.com' },
+      { title: 'Quick Assignments UK', link: 'https://quickassignments.uk' },
+      { title: 'T-Shirt Studio USA', link: 'https://tshirtstudiousa.com' },
+      { title: 'Brighter Teeth CA', link: 'https://brighterteeth.ca' },
+      { title: 'Gumbo Mix and Merch', link: 'https://gumbomixandmerch.com' },
+      { title: 'NFTuence', link: 'https://nftuence.com' }
+    ]
+  },
+  {
+    company: 'Dasign GmbH',
+    companyLink: 'https://www.dasign.de',
+    location: 'Darmstadt, Germany',
+    title: 'Full-Stack Developer (Contract)',
+    designation: 'Full-Stack Developer',
+    dates: 'Dec 2023 - May 2024',
+    content: [
+      'Converted legacy WordPress sites to React/Next.js, enhancing performance, UX, and maintainability.',
+      'Developed custom WordPress themes with Elementor and Avada, improving frontend design and backend usability.',
+      'Integrated RESTful APIs for dynamic content and platform-wide functionality.',
+      'Collaborated with design teams to build responsive UIs, boosting engagement and conversions.',
+      'Streamlined CMS workflows and reduced publishing errors with tailored admin features.',
+      'Applied SEO best practices and tracked KPIs via Google Analytics, increasing organic traffic.',
+      'Managed deployments and version control using Git and GitHub.'
+    ],
+    skills: {
+      languages: ['JavaScript', 'TypeScript', 'HTML', 'CSS'],
+      frameworksLibraries: ['React', 'Next.js', 'Tailwind CSS', 'Bootstrap'],
+      CMS: ['WordPress', 'Elementor', 'Avada'],
+      management: ['GitHub'],
+      uxui: ['Figma'],
+      misc: ['SEO', 'Google Analytics']
     },
     projects: [
       { title: 'Matuszak Hygiene: Pest Management Company', link: 'http://matuszak-hygiene.de/' },
@@ -27,74 +62,40 @@ export const jobProfiles = [
       { title: 'Landes & Kollegen: German Cosmetic Clinic', link: 'https://landes-und-kollegen.com/' },
       { title: 'Philips Connect: Event & Marketing Materials', link: 'https://philips-connect.com/' },
       { title: 'Salespower: Technical B2B Sales Insights', link: 'https://salespower.de/' },
-      { title: 'Tresper: Bilingual Portfolio', link: 'https://tresper.de/' },
-
-
-
-    ],
-  },
-  {
-    company: 'Voic Digital',
-    companyLink: 'https://voicdigital.com/',
-    location: 'Karachi, Pakistan',
-    title: 'Front-end Developer',
-    designation: 'Front-end Developer',
-    dates: 'Oct 2022 - Aug 2023',
-    content: [
-      'Proficiency in HTML5, CSS3, JavaScript (ES6+), and jQuery',
-      'Created and customized websites with WordPress, Elementor Pro, WooCommerce, Shopify, and Wix',
-      'Implemented responsive design overhaul, reducing bounce rate by 50% and increasing mobile conversion rates by 30%',
-      'Directed React component implementation, increasing user retention by 30% and conversion rates for a SaaS application by 20%'
-    ],
-    skills: {
-      languages: ['HTML', 'CSS', 'JavaScript'],
-      frameworksLibraries: ['React', 'jQuery',"Node.js", 'Bootstrap', 'Tailwind CSS'],
-      CMS: ['WordPress', 'Elementor', 'WooCommerce', 'Shopify', 'Wix'],
-      management: ['Jira'],
-      uxui: [ 'Figma', 'Adobe XD', 'Adobe Illustrator', "VistaCreate"],
-
-      misc: ['SEO', 'Digital Marketing', "Vegas Pro"],
-    },
-    projects: [
-      { title: 'Elegant Esthetics OC', link: 'https://elegantestheticsoc.com' },
-      { title: 'Quick Assignments UK', link: 'https://quickassignments.uk' },
-      { title: 'T-Shirt Studio USA', link: 'https://tshirtstudiousa.com' },
-      { title: 'Brighter Teeth CA', link: 'https://brighterteeth.ca' },
-      { title: 'Gumbo Mix and Merch', link: 'https://gumbomixandmerch.com' },
-      { title: 'NFTuence', link: 'https://nftuence.com' },
-
-  ],
-  
+      { title: 'Tresper: Bilingual Portfolio', link: 'https://tresper.de/' }
+    ]
   },
   {
     company: 'Voxtron (Pvt) Ltd',
     companyLink: 'https://www.voxtrongroup.com/',
     location: 'Karachi, Pakistan',
-    title: 'Jr. Front-end Developer',
-    designation: 'Jr. Web Developer',
-    dates: 'Oct 2020 - Sep 2022',
+    title: 'Front-End Developer',
+    designation: 'Front-End Developer',
+    dates: 'Oct 2020 - Aug 2023',
     content: [
-      'Improved website traffic by 20% and conversions by 15% with optimized UI/UX using WordPress Elementor',
-      'Achieved 30% traffic increase and 20% higher conversions through SEO/SEM and Google Analytics',
-      'Developed performant UIs with React.js and Vue.js, utilizing Redux for data management',
-      'Utilized JavaScript, TypeScript, Tailwind CSS, and Bootstrap for efficient front-end development',
-      'Designed user-centric interfaces with Figma and Adobe XD'
+      'Skilled in JavaScript, TypeScript, React.js, Vue.js, Tailwind CSS, and Bootstrap to build high-performance UIs for CRM systems, e-commerce platforms, and dashboards.',
+      'Experienced with Zustand and Redux for efficient state management in complex applications.',
+      'Integrated RESTful APIs and third-party services to enhance dynamic functionality and automation.',
+      'Designed responsive, user-friendly interfaces using Figma and Adobe XD, improving UX across devices.',
+      'Implemented mobile-first design and SEO strategies, boosting engagement and organic traffic.',
+      'Built CMS-driven websites using WordPress and Elementor, ensuring fast, optimized delivery when required.'
     ],
     skills: {
       languages: ['JavaScript', 'TypeScript', 'HTML', 'CSS'],
-      frameworksLibraries: ['React.js', 'Vue.js', ,"Node.js","Express.js",'Redux', 'Bootstrap', 'Tailwind CSS'],
-      CMS: ['WordPress', 'Elementor', 'Shopify','TYPO3'],
-      management: ['MS Teams', 'Slack'],
-      uxui: [ 'Figma', 'Adobe XD', 'Adobe Illustrator', "Canva"],
-      misc: ['Microsoft Office 365','SEO','SEM', 'Digital Marketing','PPC'],
+      frameworksLibraries: ['React.js', 'Vue.js', 'Zustand', 'Redux', 'Bootstrap', 'Tailwind CSS'],
+      CMS: ['WordPress', 'Elementor'],
+      management: ['GitHub'],
+      uxui: ['Figma', 'Adobe XD'],
+      misc: ['SEO', 'Mobile-First Design']
     },
     projects: [
+            { title: 'Tyfora', link: 'https://tyfora.com/' },
+
       { title: 'Elite Design Studios', link: 'https://elitedesignstudios.com' },
       { title: 'Logo Marshal', link: 'http://logomarshal.com' },
       { title: 'Web Designs Vikings', link: 'https://webdesignsvikings.com' },
       { title: 'Moonimals NFT', link: 'https://moonimalsnft.com' },
       { title: 'Jennia Edits', link: 'https://jenniaedits.com' }
-  ],
-  
-  },
+    ]
+  }
 ];
