@@ -1,14 +1,8 @@
-// app/layout.jsx
-'use client';
-
 import { Montserrat } from 'next/font/google';
-import { useState, useEffect } from 'react';
-import Navbar from '@/components/Navbar/Navbar';
-import Footer from '@/components/Footer/Footer';
-import { links } from '@/components/Navbar/modules/links';
+import ClientLayout from './ClientLayout';
 import './globals.css';
 
-// 🔥 Load all Montserrat weights (100 to 900)
+// Load Montserrat font
 const montserrat = Montserrat({
   subsets: ['latin'],
   display: 'swap',
@@ -16,29 +10,29 @@ const montserrat = Montserrat({
   variable: '--font-sans',
 });
 
+// Metadata for SEO
+export const metadata = {
+  title: 'Omer Baig | MERN Stack Developer',
+  description: 'Portfolio of Omer Baig, a skilled MERN Stack Developer specializing in modern web applications.',
+  keywords: ['MERN', 'Web Developer', 'Omer Baig', 'Next.js', 'React'],
+  openGraph: {
+    title: 'Omer Baig | MERN Stack Developer',
+    description: 'Explore the portfolio of Omer Baig, a MERN Stack Developer with expertise in building scalable web applications.',
+    url: 'https://omerbaig.dev', // Replace with your actual URL
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Omer Baig | MERN Stack Developer',
+    description: 'Portfolio of Omer Baig, a MERN Stack Developer.',
+  },
+};
+
 export default function RootLayout({ children }) {
-  const [darkMode, setDarkMode] = useState(false);
-
-  // Toggle function that switches between true/false
-  const toggleDarkMode = () => {
-    setDarkMode(prev => !prev);
-  };
-
-  // Apply dark class to HTML element when darkMode changes
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [darkMode]);
-
   return (
     <html lang="en" className={montserrat.variable}>
-      <body className={darkMode ? 'dark' : ''}>
-        <Navbar links={links} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-        {children}
-        <Footer darkMode={darkMode} />
+      <body>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
