@@ -26,13 +26,13 @@ const OffCanvas = ({ isMenuOpen, closeMenu, darkMode, toggleDarkMode }) => {
     <>
       {isMenuOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/40 bg-opacity-50"
+          className="fixed inset-0 z-40 bg-black/60 "
           onClick={closeMenu}
         />
       )}
 
       <div
-        className={`fixed top-0 right-0 h-full w-72 bg-white text-black dark:bg-dark-offcanvas dark:text-white flex flex-col items-start pt-4 transition-transform duration-300 transform ${
+        className={`fixed top-0 right-0 h-full w-[70%] xl:w-[30%] bg-white text-black dark:bg-dark-offcanvas dark:text-white flex flex-col items-start pt-4 transition-transform duration-300 transform ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         } z-50`}
       >
