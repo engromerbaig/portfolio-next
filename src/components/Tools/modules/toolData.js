@@ -30,6 +30,16 @@ import webpackIcon from "../../../assets/icons/Tools/webpack.svg";
 import wpIcon from "../../../assets/icons/Tools/wp.svg";
 import xdIcon from "../../../assets/icons/Tools/xd.svg";
 import zustandIcon from "../../../assets/icons/Tools/zustand.svg";
+import bootstrapIcon from "../../../assets/icons/Tools/bootstrap.svg";
+
+import jwtIcon from "../../../assets/icons/Tools/jwt.svg";
+import socketIcon from "../../../assets/icons/Tools/socket.svg";
+
+import viteIcon from "../../../assets/icons/Tools/vite.svg";
+
+// new
+import npmIcon from "../../../assets/icons/Tools/npm.svg";
+import curlIcon from "../../../assets/icons/Tools/curl.svg";
 
 const toolData = [
   {
@@ -41,14 +51,21 @@ const toolData = [
       { imgSrc: tsIcon, text: "TypeScript" },
       { imgSrc: reactjsIcon, text: "React.js" },
       { imgSrc: nextIcon, text: "Next.js" },
-      { imgSrc: tailwindIcon, text: "Tailwind CSS" }
+      { imgSrc: tailwindIcon, text: "Tailwind CSS" },
+      { imgSrc: bootstrapIcon, text: "Bootstrap" },
+            { imgSrc: reduxIcon, text: "Redux/Redux Toolkit" },
+      { imgSrc: zustandIcon, text: "Zustand" }
     ]
   },
   {
     category: "Backend",
     tools: [
       { imgSrc: nodeIcon, text: "Node.js" },
-      { imgSrc: expressjsIcon, text: "Express.js" }
+      { imgSrc: expressjsIcon, text: "Express.js" },
+      { imgSrc: jwtIcon, text: "JWT" },
+      { imgSrc: socketIcon, text: "Socket.io" },
+
+
     ]
   },
   {
@@ -63,7 +80,8 @@ const toolData = [
     category: "API & Testing Tools",
     tools: [
       { imgSrc: graphqlIcon, text: "GraphQL" },
-      { imgSrc: postmanIcon, text: "Postman" }
+      { imgSrc: postmanIcon, text: "Postman" },
+      { imgSrc: curlIcon, text: "cURL" },
       // REST is implied via Postman/GraphQL
     ]
   },
@@ -73,7 +91,8 @@ const toolData = [
       { imgSrc: vercelIcon, text: "Vercel" },
       { imgSrc: netlifyIcon, text: "Netlify" },
       { imgSrc: webpackIcon, text: "Webpack" },
-      { imgSrc: gitIcon, text: "Git" }
+      { imgSrc: gitIcon, text: "Git" },
+      { imgSrc: viteIcon, text: "Vite" }
       // GitHub Actions can be added if used
     ]
   },
@@ -97,7 +116,7 @@ const toolData = [
     tools: [
       { imgSrc: figmaIcon, text: "Figma" },
       { imgSrc: metaIcon, text: "Meta" },
-      { imgSrc: teamsIcon, text: "Teams" },
+      { imgSrc: npmIcon, text: "Node Package Manager" },
       { imgSrc: adsenseIcon, text: "Google Adsense" }
     ]
   }
