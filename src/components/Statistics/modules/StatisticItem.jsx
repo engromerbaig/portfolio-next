@@ -3,9 +3,14 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+
+import { FaGithub } from "react-icons/fa";
+
+
 import { FaCode, FaUsers, FaEarthAmericas } from 'react-icons/fa6';
 
 const iconMap = {
+  git: FaGithub,
   code: FaCode,
   users: FaUsers,
   globe: FaEarthAmericas,
@@ -51,7 +56,7 @@ const StatisticItem = ({ title, iconType, value }) => {
 
   return (
     <div ref={ref} className="flex flex-col gap-4 items-center">
-      <h1 className="font-semibold">{title}</h1>
+      <h1 className="font-semibold text-2xl">{title}</h1>
       <div className="flex items-center justify-center gap-2">
         <Icon className={iconStyles} />
         <motion.p
