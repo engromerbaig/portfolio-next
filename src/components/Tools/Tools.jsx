@@ -16,7 +16,7 @@ const Tools = () => {
       />
       
       <ToolSection 
-        text="Other Technologies/Skills"
+        text="Other Technologies"
         tools={otherTechnologies}
       />
     </div>

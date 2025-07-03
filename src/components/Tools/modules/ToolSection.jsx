@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 const ToolSection = ({ title, text, tools }) => {
   return (
     <div className="text-center mb-8">
-      {title && <Heading title={title} text={text} />}
+     <Heading title={title} text={text} />
 
       <AnimateWrapper className="grid grid-cols-2 gap-x-10 gap-y-12 place-content-center md:grid-cols-4 px-10 lg:px-24 py-10">
         {tools.map((tool, index) => (
