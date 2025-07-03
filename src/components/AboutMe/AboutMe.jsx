@@ -8,7 +8,14 @@ import { myDescription } from './myDescription';
 import { theme } from '@/theme';
 
 export default function AboutMe() {
-  const combinedDescription = `${myDescription.text}\n${myDescription.additionalText}`;
+const combinedDescription = (
+  <>
+    {myDescription.text}
+    <br />
+    <br />
+    {myDescription.additionalText}
+  </>
+);
 
   return (
     <div className={`grid md:grid-cols-2 gap-10 py-24 ${theme.sectionPaddings.horizontalPx}`}>

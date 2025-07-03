@@ -19,7 +19,7 @@ const Footer = ({ darkMode }) => {
           </p>
 
           <h1>Languages</h1>
-          <p>English (Native) & German (A2)</p>
+          <p>Urdu(Native), English (Native) & German (A2)</p>
         </div>
 
         <div className="col-span-3 flex flex-col gap-4">

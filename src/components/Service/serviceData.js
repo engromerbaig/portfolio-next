@@ -5,18 +5,26 @@ import backEndIcon from '../../assets/icons/Services/backend-icon.svg'
 
 
 const serviceData = [
-  { icon: supportIcon, 
-    title: "Continuous support", 
-    description: "I will enhance your web-based software to ensure it remains efficient and competitive in the market. By leveraging established DevOps processes, I can deploy urgent updates within hours and release new, planned functional modules bi-weekly." 
+  {
+    icon: supportIcon,
+    title: "Continuous Support & Deployment",
+    description:
+      "I ensure your MERN-based web applications remain competitive and high-performing with regular updates, bug fixes, and feature enhancements. Using DevOps best practices and modern CI/CD pipelines, I can deliver urgent patches within hours and deploy planned updates bi-weekly across React, Node.js, and MongoDB-based systems.",
   },
-  { icon: frontEndIcon, 
-    title: "Front-end development", 
-    description: "As a web expert, I thoroughly analyze the user audience to understand their needs and incorporate these insights into the UI design. Once the look and feel of the web app are aligned with project stakeholders, I rapidly bring it to life using advanced front-end technologies, ensuring an exceptional and efficient user experience." 
+  {
+    icon: frontEndIcon,
+    title: "Frontend Development with React & Next.js",
+    description:
+      "I craft dynamic, responsive, and SEO-optimized interfaces using React and Next.js. With a deep understanding of user behavior and modern UI/UX principles, I transform wireframes into intuitive user experiences, focusing on performance, accessibility, and reusability through components, hooks, and server-side rendering.",
   },
-  { icon: backEndIcon, 
-    title: "Back-end development", 
-    description: "I meticulously implement the business logic of your web app on the back end, utilizing established frameworks to ensure fast and high-quality coding. I also develop well-structured APIs to seamlessly integrate your web app with corporate or third-party systems and services." 
+  {
+    icon: backEndIcon,
+    title: "Backend Development with Node.js & Express",
+    description:
+      "I build scalable and secure backends using Node.js and Express, implementing clean business logic and structured REST or GraphQL APIs. I also design and manage MongoDB databases, ensuring efficient data flow and integration with third-party services to deliver full-stack, production-ready applications.",
   },
 ];
+
+
 
 export default serviceData;

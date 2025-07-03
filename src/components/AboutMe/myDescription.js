@@ -1,5 +1,5 @@
 export const myDescription = {
-    title:"About Me, I'm Muhammad Omer Baig",
-    text:"A Germany-based full stack developer specializing in delivering comprehensive digital solutions. With three years of experience in web and mobile app development, I provide end-to-end services, including design, concept development, SEO, and digital marketing.",
-    additionalText:"Beyond my professional work, I enjoy staying active at the gym, exploring the world of cryptocurrency, and following football. If any of this resonates with you, please feel free to reach out and connect.",
-}
+  title: "About Me – I'm Muhammad Omer Baig",
+  text: "I'm a full stack MERN developer with a passion for building scalable web applications. My journey began with WordPress, evolved into React, and has grown into delivering complete solutions using MongoDB, Express, React, and Node.js.",
+  additionalText: "Outside of coding, I enjoy hitting the gym, exploring crypto, and watching football. Let’s connect if you’re building something exciting.",
+};
