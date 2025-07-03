@@ -10,12 +10,33 @@ import snHydraulikImage from '../../../assets/images/Projects/sn-hydraulik.webp'
 import econsImage from '../../../assets/images/Projects/econs.webp'
 
 import portfolioImage from '../../../assets/images/Projects/portfolio.webp'
+import sconsImage from "../../../assets/images/Projects/scons.png"
+import alpagoImage from "../../../assets/images/Projects/alpago.png"
 
 
 
 
 
 const projectData = [
+ { 
+  image: alpagoImage,
+  title: 'Alpago Properties – Real Estate Website Clone',
+  description: 'Developed a high-performance real estate website clone for Alpago Properties using Next.js and Tailwind CSS. The site features dynamic routing, responsive layouts, and modern UI elements. Deployed on Netlify with image optimization and fast-loading architecture inspired by the original Dubai-based brand.',
+  siteLink: 'https://alpago-properties-clone.netlify.app/',
+  gitLink: 'https://github.com/engromerbaig/alpago-properties-clone'
+},
+
+
+
+  { 
+  image: sconsImage,
+  title: 'Scons Tech – Web Development Agency Portfolio',
+  description: 'Built and deployed the official website for Scons Tech, a modern web development agency, using React.js and Tailwind CSS. The site is fully responsive and showcases services, projects, and contact forms. Hosted on Netlify for optimized performance and continuous deployment.',
+  siteLink: 'https://sconstech.com/',
+},
+
+
+
     { image: portfolioImage, 
         title: 'MERN Hierarchical Chat App with Admin Controls', 
         description: 'Developed a hierarchy-based live chat app using the MERN stack with Socket.io for real-time messaging and Zustand for state management. The app features an admin dashboard for user control and chat initiation based on a dynamic hierarchy tree, enabling seamless communication across organizational levels.',
