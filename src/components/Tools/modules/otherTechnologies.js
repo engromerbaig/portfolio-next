@@ -6,6 +6,9 @@ import figmaIcon from "../../../assets/icons/Tools/Other/figma.svg";
 import seoIcon from "../../../assets/icons/Tools/Other/seo.svg";
 import dmIcon from "../../../assets/icons/Tools/Other/dm.svg";
 
+import gitIcon from "../../../assets/icons/Tools/Other/git.svg";
+
+
 // new imports
 import adsenseIcon from "../../../assets/icons/Tools/Other/adsense.svg";
 import xdIcon from "../../../assets/icons/Tools/Other/xd.svg";
@@ -19,7 +22,7 @@ const otherTechnologies = [
     { imgSrc: elementorIcon, text: "Elementor" },
     { imgSrc: shopifyIcon, text: "Shopify" },
     { imgSrc: figmaIcon, text: "Figma" },
-    { imgSrc: xdIcon, text: "Adobe XD" },
+    { imgSrc: gitIcon, text: "Git/GitHub" },
     { imgSrc: seoIcon, text: "SEO/SEM" },
     { imgSrc: adsenseIcon, text: "Google Analytics" },
     { imgSrc: metaIcon, text: "Meta ads" },
