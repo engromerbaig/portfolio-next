@@ -94,7 +94,7 @@ const Statistics = () => {
       <div className="text-center mb-8">
         <Heading
           title="Performance Highlights"
-          text="My Constantly Evolving Stats"
+          text="My Constantly Growing Stats"
         />
       </div>
 
