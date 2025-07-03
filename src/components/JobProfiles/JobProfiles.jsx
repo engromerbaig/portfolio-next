@@ -15,7 +15,7 @@ const JobProfiles = ({ selectedTab, setSelectedTab }) => {
             <button
               key={index}
               onClick={() => setSelectedTab(index)}
-              className={`px-4 py-2 mx-2 ${
+              className={`px-3 py-2 xl:px-4 xl:py-3 cursor-pointer xl:rounded-full xl:shadow-md xl:font-semibold mx-2 ${
                 selectedTab === index
                   ? 'bg-theme-blue text-white'
                   : 'bg-light-hover dark:bg-dark-hover text-body-text-light dark:text-body-text-dark'
