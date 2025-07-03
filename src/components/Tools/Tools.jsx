@@ -5,6 +5,7 @@ import ToolSection from "./modules/ToolSection";
 import toolData from "./modules/toolData";
 import otherTechnologies from "./modules/otherTechnologies";
 import { theme } from "../../theme";
+import Button from "../Button/Button";
 
 const Tools = () => {
   return (
@@ -15,10 +16,9 @@ const Tools = () => {
         tools={toolData}
       />
       
-      <ToolSection 
-        text="Other Technologies"
-        tools={otherTechnologies}
-      />
+      <div className="flex justify-center">
+        <Button text="More Tools" href="/tech-stack" />
+      </div>
     </div>
   );
 };
