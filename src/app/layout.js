@@ -18,7 +18,7 @@ export const metadata = {
   openGraph: {
     title: 'Omer Baig | MERN Stack Developer',
     description: 'Explore the portfolio of Omer Baig, a MERN Stack Developer with expertise in building scalable web applications.',
-    url: 'https://omerbaig.dev', // Replace with your actual URL
+    url: 'https://omerbaig.dev',
     type: 'website',
   },
   twitter: {
@@ -32,12 +32,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={montserrat.variable}>
       <head>
-
-        <link rel="icon" href="/favicon.ico"  />
-
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
         <ClientLayout>{children}</ClientLayout>
+
+        {/* 🔒 Hidden Netlify Form for build-time detection */}
+        <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+          <input type="text" name="name" />
+          <input type="tel" name="phone" />
+          <input type="email" name="email" />
+          <textarea name="subject" />
+        </form>
       </body>
     </html>
   );
