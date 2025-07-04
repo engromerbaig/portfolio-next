@@ -20,27 +20,37 @@ const Hero = () => {
 />
 
 
-          <div className="flex flex-col items-center justify-start w-full md:flex-row gap-4">
+         <div className="flex flex-col items-center justify-start w-full md:flex-row md:justify-start gap-4">
+
+  <FadeWrapper order={1}>
+    <div className="w-full md:w-auto">
+      <ScrollSamePage targetId="projects">
+        <Button
+          text="MY PROJECTS"
+          hover
+          className="w-60 md:w-48"
+        />
+      </ScrollSamePage>
+    </div>
+  </FadeWrapper>
+
+  <FadeWrapper order={2}>
+    <div className="w-full md:w-auto">
+      <Link href="/resume.pdf" passHref legacyBehavior>
+        <a
+          download
+          className="block w-60 md:w-48 text-center bg-theme-blue hover:bg-theme-blue/80 text-white py-4 uppercase px-4 rounded font-bold"
+        >
+          My Resume
+        </a>
+      </Link>
+    </div>
+  </FadeWrapper>
+
+</div>
 
 
-             <FadeWrapper order={1}>
-              <ScrollSamePage targetId="projects">
-                <Button
-                  text="MY PROJECTS"
-                  hover
-                />
-              </ScrollSamePage>
-            </FadeWrapper>
 
-
-            <FadeWrapper order={2}>
-<Link href="/resume.pdf" passHref legacyBehavior>
-  <a download className="bg-theme-blue hover:bg-theme-blue/80 text-white py-4 uppercase px-4 rounded font-bold">My Resume</a>
-</Link>
-            </FadeWrapper>
-
-           
-          </div>
         </div>
 
         {/* Parent for hero image */}
