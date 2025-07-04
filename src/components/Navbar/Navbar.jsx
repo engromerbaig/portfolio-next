@@ -24,7 +24,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
             <Image
               src={darkMode ? '/images/logo-white.png' : '/images/logo-black.png'}
               alt="Logo"
-              className="h-10 cursor-pointer"
+              className="cursor-pointer"
               width={140}
               height={40}
               priority
