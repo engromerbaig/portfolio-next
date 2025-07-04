@@ -1,14 +1,14 @@
 'use client';
 
-import Hero from '../Components/Hero/Hero';
-import Service from '../Components/Service/Service';
-import Tools from '../Components/Tools/Tools';
-import Statistics from '../Components/Statistics/Statistics';
-import Projects from '../Components/Projects/Projects';
-import AboutMe from '../Components/AboutMe/AboutMe';
-import Message from '../Components/Message/Message';
-import { theme } from '../theme';
-import FadeInSection from '../utilities/Animations/FadeInSection';
+import Hero from '@/components/Hero/Hero';
+import Service from '@/components/Service/Service';
+import Tools from '@/components/Tools/Tools';
+import Statistics from '@/components/Statistics/Statistics';
+import Projects from '@/components/Projects/Projects';
+import AboutMe from '@/components/AboutMe/AboutMe';
+import Message from '@/components/Message/Message';
+import { theme } from '@/theme';
+import FadeInSection from '@/utilities/Animations/FadeInSection';
 
 export default function Home() {
   return (
