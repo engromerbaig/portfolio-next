@@ -13,7 +13,7 @@ const includedLabels = [
   "Tailwind CSS",
   "JavaScript",
   "TypeScript",
-  "Node",
+  "Node.js",
   "GraphQL",
   "Express.js"
 ];
